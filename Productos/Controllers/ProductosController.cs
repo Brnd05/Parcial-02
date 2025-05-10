@@ -10,34 +10,43 @@ namespace Productos.Controllers
     [ApiController]
     public class ProductosController : ControllerBase
     {
-        
-        
-           private readonly ProductosContext _context;
 
+        // Declara una variable privada de solo lectura para almacenar el contexto de la base de datos
+        private readonly ProductosContext _context;
+
+        // Constructor del controlador "ProductosController"
+        // Recibe una instancia de "ProductosContext" mediante inyección de dependencias
         public ProductosController(ProductosContext context)
         {
+            // Asigna el contexto de la base de datos a la variable privada "_context"
+            // Esto permite acceder a la base de datos dentro del controlador
             _context = context;
         }
 
-        [HttpPost]
-        [Route("Crear")]
-        public async Task<IActionResult> CrearProducto(Producto product0)
+        [HttpPost] // Indica que este método manejará solicitudes HTTP POST
+        [Route("Crear")] // Define la ruta de acceso para la creación de productos
+        public async Task<IActionResult> CrearProducto(Producto product0) // Recibe un objeto Producto en la solicitud
         {
+            // Agrega el nuevo producto a la base de datos de manera asíncrona
             await _context.Productos.AddAsync(product0);
+
+            // Guarda los cambios en la base de datos
             await _context.SaveChangesAsync();
 
+            // Devuelve una respuesta HTTP 200 (OK) indicando que se creó correctamente
             return Ok();
         }
 
-        [HttpGet]
-        [Route("lista")]
-        public async Task<ActionResult<IEnumerable<Producto>>>ListaProductos()
+        [HttpGet] // Indica que este método manejará solicitudes HTTP GET
+        [Route("lista")] // Define la ruta de acceso como "lista"
+        public async Task<ActionResult<IEnumerable<Producto>>> ListaProductos() // Devuelve una lista de productos en formato JSON
         {
+            // Obtiene todos los productos de la base de datos de manera asíncrona
             var productos = await _context.Productos.ToListAsync();
+
+            // Devuelve los productos obtenidos en formato JSON con código de respuesta 200 (OK)
             return Ok(productos);
         }
-
-
 
         [HttpPut("Actualizar/{id}")]
         //este método sirve para que el parámetro id se obtenga desde la URL en lugar de esperar que se envíe en el cuerpo de la solicitud.

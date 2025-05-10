@@ -170,3 +170,4 @@ C:\Users\Brandon\OneDrive\Documentos\Visual Studio 2022\Parcial 02 Programacion 
 C:\Users\Brandon\OneDrive\Documentos\Visual Studio 2022\Parcial 02 Programacion ll\Parcial 02\Productos\obj\Debug\net8.0\Productos.pdb
 C:\Users\Brandon\OneDrive\Documentos\Visual Studio 2022\Parcial 02 Programacion ll\Parcial 02\Productos\obj\Debug\net8.0\Productos.genruntimeconfig.cache
 C:\Users\Brandon\OneDrive\Documentos\Visual Studio 2022\Parcial 02 Programacion ll\Parcial 02\Productos\obj\Debug\net8.0\ref\Productos.dll
+C:\Users\Brandon\OneDrive\Documentos\Visual Studio 2022\Parcial 02 Programacion ll\Parcial 02\Productos\obj\Debug\net8.0\Productos.sourcelink.json
